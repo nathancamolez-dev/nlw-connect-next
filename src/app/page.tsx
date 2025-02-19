@@ -1,3 +1,6 @@
+import { Button } from '@/components/button'
+import { InputField, InputIcon, InputRoot } from '@/components/input'
+import { ArrowRight, Mail, User } from 'lucide-react'
 import Image from 'next/image'
 import logo from '../assets/logo.svg'
 
@@ -10,7 +13,56 @@ export default function Home() {
 
           <h1 className="text-4xl text-center leading-none font-heading font-medium flex flex-col md:text-7xl md:text-left">
             <span className="text-blue">CodeCraft</span>
+            Summit 2025
           </h1>
+        </div>
+        <div className="flex gap-5 items-stretch flex-col md:flex-row">
+          <div className="flex-1 bg-gray-700 border border-gray-600 rounded-2xl p-8 space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="font-heading font-semibold text-gray-200 text-xl">
+                Sobre o evento
+              </h2>
+              <span className="text-purple font-semibold text-xs flex items-center gap-2">
+                AO VIVO
+              </span>
+            </div>
+            <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+              Um evento feito por e para pessoas desenvolvedoras apaixonadas por
+              criar soluções inovadoras e compartilhar conhecimento. Vamos
+              mergulhar nas tendências mais recentes em desenvolvimenot de
+              software, arquitetura ede sistemas e tecnologias emergentes, com
+              palestras, workshops e hackathons.
+              <br />
+              <br />
+              Dias 15 a 17 de março | Das 18 às 21h | Online & Gratuito
+            </p>
+          </div>
+          <form className="bg-gray-700 border boder-gray-600 rounded-2xl p-8 space-y-6 w-full md:max-w-[440px]">
+            <h2 className="font-heading font-semibold text-gray-200 text-xl">
+              Inscrição
+            </h2>
+
+            <div className="space-y-3">
+              <InputRoot>
+                <InputIcon>
+                  <User />
+                </InputIcon>
+                <InputField type="text" placeholder="Seu nome" />
+              </InputRoot>
+
+              <InputRoot>
+                <InputIcon>
+                  <Mail />
+                </InputIcon>
+                <InputField type="email" placeholder="Seu e-email" />
+              </InputRoot>
+            </div>
+
+            <Button type="submit">
+              Confirmar
+              <ArrowRight />
+            </Button>
+          </form>
         </div>
       </div>
     </main>
