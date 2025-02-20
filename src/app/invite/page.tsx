@@ -1,15 +1,15 @@
-import { IconButton } from '@/components/icon-button'
-import { InputField, InputIcon, InputRoot } from '@/components/input'
-import { BadgeCheck, Copy, Link, Medal, MousePointerClick } from 'lucide-react'
 import Image from 'next/image'
+
 import logo from '../../assets/logo.svg'
+import { InviteLinkInput } from './invite-link-input'
+import { Ranking } from './ranking'
+import { Stats } from './stats'
 
 export default function InvitePage() {
   return (
     <div className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row">
       <div className="flex flex-col gap-10 w-full max-w-[550px]">
         <Image src={logo} alt="devstage" width={108.5} height={30} />
-
         <div className="space-y-2">
           <h1 className="text-4xl font-semibold font-heading text-gray-100 leading-none">
             Inscrição confirmada!
@@ -28,54 +28,14 @@ export default function InvitePage() {
               exclusivos! É só compartilhar o link da inscrição!
             </p>
           </div>
-          <InputRoot>
-            <InputIcon>
-              <Link className="size-5" />
-            </InputIcon>
-
-            <InputField
-              readOnly
-              defaultValue="https://localhost:3000/invite/somethingsome"
-            />
-
-            <IconButton className="-mr-2">
-              <Copy className="size-5" />
-            </IconButton>
-          </InputRoot>
-
-          <div className="grid gap-3 md:grid-cols-3">
-            <div className="relative bg-gray-700 border border-gray-600 px-4 py-7 flex flex-col items-center gap-1 rounded-xl">
-              <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-                1042
-              </span>
-              <span className="text-sm text-gray-300 leading-none text-center">
-                Acesso ao link
-              </span>
-              <MousePointerClick className="size-5 text-purple absolute top-3 left-3" />
-            </div>
-
-            <div className="relative bg-gray-700 border border-gray-600 px-4 py-7 flex flex-col items-center gap-1 rounded-xl">
-              <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-                1042
-              </span>
-              <span className="text-sm text-gray-300 leading-none text-center">
-                Inscrições feitas
-              </span>
-              <BadgeCheck className="size-5 text-purple absolute top-3 left-3" />
-            </div>
-
-            <div className="relative bg-gray-700 border border-gray-600 px-4 py-7 flex flex-col items-center gap-1 rounded-xl">
-              <span className="font-heading text-2xl font-semibold text-gray-200 leading-none">
-                3º
-              </span>
-              <span className="text-sm text-gray-300 leading-none text-center">
-                Posição o ranking
-              </span>
-              <Medal className="size-5 text-purple absolute top-3 left-3" />
-            </div>
-          </div>
         </div>
+
+        <InviteLinkInput />
+
+        <Stats />
       </div>
+
+      <Ranking />
     </div>
   )
 }
